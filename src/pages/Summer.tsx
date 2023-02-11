@@ -11,7 +11,6 @@ const Summer = () => {
       gradientColorEnd: "rgba(180, 255, 85, 0.56)", // Gradient color end (rgba).
       gradientColorDegree: 120, // Gradient degree angle.
     };
-    sakura.start();
   }, []);
   return <FeedLayout></FeedLayout>;
 };

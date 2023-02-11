@@ -12,7 +12,6 @@ const Winter = () => {
       gradientColorEnd: "rgba(0, 240, 255, 0.56)", // Gradient color end (rgba).
       gradientColorDegree: 120, // Gradient degree angle.
     };
-    sakura.start();
   }, []);
   return (
     <div className={"h-full w-full"}>

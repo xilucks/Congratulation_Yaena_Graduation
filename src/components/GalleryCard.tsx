@@ -54,7 +54,6 @@ const GalleryCard = ({ type }: GalleryCardProps) => {
           background={themeColor}
           onClick={() => {
             navigate(`${type}`);
-            sakura.stop();
           }}
         >
           <BackTittle>{type}</BackTittle>

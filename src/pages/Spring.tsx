@@ -14,7 +14,6 @@ const Spring = () => {
       gradientColorEnd: "rgba(255, 197, 208, 0.9)", // Gradient color end (rgba).
       gradientColorDegree: 120, // Gradient degree angle.
     };
-    sakura.start();
   }, []);
   return (
     <FeedLayout>

@@ -12,7 +12,6 @@ const Autumn = () => {
       gradientColorEnd: "rgba(240, 185, 42, 0.56)", // Gradient color end (rgba).
       gradientColorDegree: 120, // Gradient degree angle.
     };
-    sakura.start();
   });
   return <FeedLayout></FeedLayout>;
 };
