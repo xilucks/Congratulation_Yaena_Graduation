@@ -1,6 +1,7 @@
 import MainImage from "../assets/images/hero_image.png";
 import WhiteArrowDown from "../assets/icon/WhiteArrowDown.svg";
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -23,7 +24,28 @@ const Home = () => {
           </ScrollArea>
         </Selector>
         <Selector className={"carousel-item h-full"}>
-          <ContentArea>dd</ContentArea>
+          <ContentArea>
+            <div>
+              <div>
+                <span>2023.02.16</span>
+              </div>
+              <div>
+                <span>이예나의 졸업을 축하합니다.</span>
+              </div>
+            </div>
+            <div>
+              <div>
+                <Link to={"/gallery"}>
+                  <button type="button">갤러리</button>
+                </Link>
+              </div>
+              <div>
+                <Link to={"/end"}>
+                  <button type="button">축하사</button>
+                </Link>
+              </div>
+            </div>
+          </ContentArea>
         </Selector>
       </Wrapper>
     </div>
@@ -59,20 +81,20 @@ const ScrollArea = styled.div`
   width: 100%;
   position: absolute;
   bottom: 0;
-  padding-bottom: 20%;
+  padding-bottom: 10vh;
 
   img {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    max-height: 600px;
-    max-width: 800px;
+    max-height: 550px;
+    max-width: 750px;
   }
 
   div {
     position: absolute;
     width: 100%;
-    height: 12.3vh;
+    height: 10vh;
     min-height: 95px;
     bottom: 0;
   }
@@ -116,5 +138,7 @@ const ContentArea = styled.div`
   width: 100%;
   height: 100%;
 
-  background-color: #111417;
+  background-color: #fed1a7;
 `;
+
+const GalleryButton = styled.button``;
