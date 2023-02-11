@@ -1,5 +1,13 @@
+import { useEffect } from "react";
+import Sakura from "../assets/sakura/sakura";
+import FeedLayout from "../layout/FeedLayout";
+
 const Summer = () => {
-  return <h1>Summer Page</h1>;
+  useEffect(() => {
+    const sakura = new Sakura("body");
+    sakura.stop();
+  }, []);
+  return <FeedLayout></FeedLayout>;
 };
 
 export default Summer;

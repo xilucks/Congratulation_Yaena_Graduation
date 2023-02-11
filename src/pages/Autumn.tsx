@@ -1,5 +1,14 @@
+import { useEffect } from "react";
+import Sakura from "../assets/sakura/sakura";
+import FeedLayout from "../layout/FeedLayout";
+import SpringMain from "../assets/images/SpringMain.jpeg";
+
 const Autumn = () => {
-  return <h1>Autumn Page</h1>;
+  useEffect(() => {
+    const sakura = new Sakura("body");
+    sakura.stop();
+  });
+  return <FeedLayout></FeedLayout>;
 };
 
 export default Autumn;

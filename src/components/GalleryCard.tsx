@@ -4,6 +4,8 @@ import SummerMain from "../assets/images/SummerMain.jpeg";
 import AutumnMain from "../assets/images/AutumnMain.jpeg";
 import WinterMain from "../assets/images/WinterMain.jpeg";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { sakura } from "../pages/Gallery";
 
 interface GalleryCardProps {
   type: "spring" | "summer" | "autumn" | "winter";
@@ -12,34 +14,49 @@ interface GalleryCardProps {
 const GalleryCard = ({ type }: GalleryCardProps) => {
   const [imageLink, setImageLink] = useState("");
   const [themeColor, setThemeColor] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     switch (type) {
       case "spring":
-        setThemeColor("#F497FC");
+        setThemeColor(
+          "linear-gradient(180deg, #F497FC 0%, rgba(243, 169, 250, 0.557292) 52.6%, rgba(217, 217, 217, 0) 100%)"
+        );
         setImageLink(SpringMain);
         break;
       case "summer":
-        setThemeColor("#00FF19");
+        setThemeColor(
+          "linear-gradient(180deg, #00FF19 0%, rgba(180, 255, 85, 0.557292) 44.27%, rgba(217, 217, 217, 0) 100%)"
+        );
         setImageLink(SummerMain);
         break;
       case "autumn":
-        setThemeColor("#F89502");
+        setThemeColor(
+          "linear-gradient(180deg, #F89502 0%, rgba(240, 185, 42, 0.557292) 44.27%, rgba(217, 217, 217, 0) 100%)"
+        );
         setImageLink(AutumnMain);
         break;
       default:
-        setThemeColor("#030179");
+        setThemeColor(
+          "linear-gradient(180deg, #030179 0%, rgba(90, 64, 245, 0.557292) 44.27%, rgba(217, 217, 217, 0) 100%)"
+        );
         setImageLink(WinterMain);
         break;
     }
   }, []);
   return (
-    <Wrapper>
+    <Wrapper className="carousel-item">
       <CardContainer>
         <CardFront>
           <MainImage src={imageLink} alt={"메인 이미지"} />
         </CardFront>
-        <CardBack background={themeColor}>
+        <CardBack
+          background={themeColor}
+          onClick={() => {
+            navigate(`${type}`);
+            sakura.stop();
+          }}
+        >
           <BackTittle>{type}</BackTittle>
         </CardBack>
       </CardContainer>

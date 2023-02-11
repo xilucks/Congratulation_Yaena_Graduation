@@ -69,7 +69,7 @@ const Sakura = function (selector, options) {
 
     return (
       rect.top >= 0 &&
-      rect.left >= 100 &&
+      rect.left >= 0 &&
       rect.bottom < document.documentElement.clientHeight - 500 &&
       rect.right <= document.documentElement.clientWidth - 100
     );
@@ -167,7 +167,6 @@ Sakura.prototype.start = function () {
   if (!animId) {
     this.el.setAttribute("data-sakura-anim-id", window.requestAnimationFrame(this.createPetal));
   } else {
-    throw new Error("Sakura is already running.");
   }
 };
 
