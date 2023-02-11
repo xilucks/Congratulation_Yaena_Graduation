@@ -21,6 +21,7 @@
 * 친구들이 축하 코멘트를 달 수 있고 확인할 수 있다.
 
 </br>
+
 ## 기술스택
 <div>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/>
