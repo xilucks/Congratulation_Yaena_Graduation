@@ -1,22 +1,21 @@
-import "../assets/snow/snow.css";
-import Sakura from "../assets/sakura/sakura";
 import { useEffect } from "react";
 import FeedLayout from "../layout/FeedLayout";
-import snowFalling from "../assets/snow/snow";
 import styled from "@emotion/styled";
 import WinterMain from "../assets/images/WinterMain.jpeg";
+import { sakura } from "./Gallery";
 
 const Winter = () => {
   useEffect(() => {
-    const sakura = new Sakura("body");
-    sakura.stop();
-    snowFalling();
+    sakura.settings.colors[0] = {
+      // You can add multiple colors (chosen randomly) by adding elements to the array.
+      gradientColorStart: "rgba(0, 224, 255, 0.7)", // Gradient color start (rgba).
+      gradientColorEnd: "rgba(0, 240, 255, 0.56)", // Gradient color end (rgba).
+      gradientColorDegree: 120, // Gradient degree angle.
+    };
+    sakura.start();
   }, []);
   return (
-    <div className={"h-full w-full bg-[#030179]"}>
-      <div className={"section01"}>
-        <canvas id={"snow_canvas"}></canvas>
-      </div>
+    <div className={"h-full w-full"}>
       <FeedLayout>
         <MainContainer>
           <Wrapper>
@@ -41,7 +40,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
 
-  padding-top: 30vh;
+  padding-top: 25vh;
 `;
 
 const ImageContainer = styled.div`

@@ -1,4 +1,4 @@
-const Sakura = function (selector, options) {
+const Sakura = function (selector, season, options) {
   if (typeof selector === "undefined") {
     throw new Error("No selector present. Define an element.");
   }
@@ -22,6 +22,38 @@ const Sakura = function (selector, options) {
     ],
   };
 
+  const summer = {
+    className: "leaves", // Classname of the petal. This corresponds with the css.
+    fallSpeed: 1, // Speed factor in which the petal falls (higher is slower).
+    maxSize: 14, // The maximum size of the petal.
+    minSize: 10, // The minimum size of the petal.
+    delay: 300, // Delay between petals.
+    colors: [
+      {
+        // You can add multiple colors (chosen randomly) by adding elements to the array.
+        gradientColorStart: "rgba(0, 255, 25, 1)", // Gradient color start (rgba).
+        gradientColorEnd: "rgba(180, 255, 85, 0.56)", // Gradient color end (rgba).
+        gradientColorDegree: 120, // Gradient degree angle.
+      },
+    ],
+  };
+
+  const autumn = {
+    className: "autumn", // Classname of the petal. This corresponds with the css.
+    fallSpeed: 1, // Speed factor in which the petal falls (higher is slower).
+    maxSize: 14, // The maximum size of the petal.
+    minSize: 10, // The minimum size of the petal.
+    delay: 300, // Delay between petals.
+    colors: [
+      {
+        // You can add multiple colors (chosen randomly) by adding elements to the array.
+        gradientColorStart: "rgba(248, 149, 2, 1)", // Gradient color start (rgba).
+        gradientColorEnd: "rgba(240, 185, 42, 0.56)", // Gradient color end (rgba).
+        gradientColorDegree: 120, // Gradient degree angle.
+      },
+    ],
+  };
+
   // Merge defaults with user options.
   const extend = function (originalObj, newObj) {
     Object.keys(originalObj).forEach((key) => {
@@ -34,7 +66,34 @@ const Sakura = function (selector, options) {
     return originalObj;
   };
 
-  this.settings = extend(defaults, options);
+  let theme = defaults;
+
+  switch (season) {
+    case "summer":
+      defaults.colors = [
+        {
+          // You can add multiple colors (chosen randomly) by adding elements to the array.
+          gradientColorStart: "rgba(0, 255, 25, 1)", // Gradient color start (rgba).
+          gradientColorEnd: "rgba(180, 255, 85, 0.56)", // Gradient color end (rgba).
+          gradientColorDegree: 120, // Gradient degree angle.
+        },
+      ];
+      break;
+    case "autumn":
+      defaults.colors = [
+        {
+          // You can add multiple colors (chosen randomly) by adding elements to the array.
+          gradientColorStart: "rgba(248, 149, 2, 1)", // Gradient color start (rgba).
+          gradientColorEnd: "rgba(240, 185, 42, 0.56)", // Gradient color end (rgba).
+          gradientColorDegree: 120, // Gradient degree angle.
+        },
+      ];
+      break;
+    default:
+      theme = defaults;
+  }
+
+  this.settings = extend(theme, options);
 
   // Hide horizontal scrollbars on the target element.
   this.el.style.overflowX = "hidden";
@@ -159,7 +218,7 @@ const Sakura = function (selector, options) {
     this.el.appendChild(petal);
   };
 
-  this.el.setAttribute("data-sakura-anim-id", window.requestAnimationFrame(this.createPetal));
+  // this.el.setAttribute("data-sakura-anim-id", window.requestAnimationFrame(this.createPetal));
 };
 
 Sakura.prototype.start = function () {
