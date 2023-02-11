@@ -69,11 +69,11 @@ const TextArea = styled.div`
   padding-top: 8vh;
 
   color: #ffffff;
-  font-size: 15vw;
+  font-size: 10vh;
   font-family: "Italianno", sans-serif;
 
   div {
-    margin-bottom: 10vw;
+    margin-bottom: 6vh;
   }
 `;
 

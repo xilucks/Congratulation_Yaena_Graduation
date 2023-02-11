@@ -39,7 +39,9 @@ const GalleryCard = ({ type }: GalleryCardProps) => {
         <CardFront>
           <MainImage src={imageLink} alt={"메인 이미지"} />
         </CardFront>
-        <CardBack background={themeColor}>{type}</CardBack>
+        <CardBack background={themeColor}>
+          <BackTittle>{type}</BackTittle>
+        </CardBack>
       </CardContainer>
     </Wrapper>
   );
@@ -51,8 +53,6 @@ const Wrapper = styled.div`
   position: relative;
   width: 250px;
   height: 350px;
-
-  overflow: hidden;
 
   :hover > div {
     transform: rotateY(180deg);
@@ -75,7 +75,6 @@ const CardFront = styled.div`
   height: 100%;
 
   backface-visibility: hidden;
-  background: aqua;
 
   border-radius: 10px;
   text-align: center;
@@ -101,4 +100,12 @@ const MainImage = styled.img`
   width: 100%;
 
   overflow: hidden;
+`;
+
+const BackTittle = styled.div`
+  margin-top: 30%;
+
+  font-size: 48px;
+  color: #ffffff;
+  font-weight: bold;
 `;
