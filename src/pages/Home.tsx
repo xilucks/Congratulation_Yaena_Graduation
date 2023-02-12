@@ -36,12 +36,12 @@ const Home = () => {
             <div>
               <div>
                 <Link to={"/gallery"}>
-                  <button type="button">갤러리</button>
+                  <button type="button">갤러리 이건 버튼임</button>
                 </Link>
               </div>
               <div>
                 <Link to={"/end"}>
-                  <button type="button">축하사</button>
+                  <button type="button">축하사 이건 버튼임</button>
                 </Link>
               </div>
             </div>
@@ -57,7 +57,7 @@ export default Home;
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: linear-gradient(180deg, rgba(255, 153, 0, 1) 10%, rgba(255, 22, 232, 0.3) 90%);
 `;
 

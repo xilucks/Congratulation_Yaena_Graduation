@@ -5,4 +5,6 @@ export interface SeasonDataType {
   photoOwner: string;
 
   comment: string;
+
+  season?: "spring" | "summer" | "autumn" | "winter";
 }

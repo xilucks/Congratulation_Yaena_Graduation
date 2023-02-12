@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import FeedLayout from "../layout/FeedLayout";
 import styled from "@emotion/styled";
-import WinterMain from "../assets/images/WinterMain.jpeg";
 import { sakura } from "./Gallery";
+import { winterData } from "../Storage/SeasonData";
+import ImageCard from "../components/ImageCard";
 
 const Winter = () => {
   useEffect(() => {
@@ -12,17 +13,25 @@ const Winter = () => {
       gradientColorEnd: "rgba(0, 240, 255, 0.56)", // Gradient color end (rgba).
       gradientColorDegree: 120, // Gradient degree angle.
     };
+    sakura.start();
   }, []);
   return (
-    <div className={"h-full w-full"}>
+    <div className={"h-full w-full bg-[#030179]"}>
       <FeedLayout>
-        <MainContainer>
-          <Wrapper>
-            <ImageContainer>
-              <img src={WinterMain} />
-            </ImageContainer>
-          </Wrapper>
-        </MainContainer>
+        <div className={"carousel w-full"}>
+          {winterData.map((element) => {
+            return (
+              <ImageCard
+                title={element.title}
+                imgUrl={element.imgUrl}
+                date={element.date}
+                photoOwner={element.photoOwner}
+                comment={element.comment}
+                season={"winter"}
+              />
+            );
+          })}
+        </div>
       </FeedLayout>
     </div>
   );

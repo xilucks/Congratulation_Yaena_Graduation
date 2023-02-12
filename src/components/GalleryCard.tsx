@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
-import SpringMain from "../assets/images/SpringMain.jpeg";
-import SummerMain from "../assets/images/SummerMain.jpeg";
-import AutumnMain from "../assets/images/AutumnMain.jpeg";
-import WinterMain from "../assets/images/WinterMain.jpeg";
+import SpringMain from "../assets/images/Spring/SpringMain.jpeg";
+import SummerMain from "../assets/images/Summer/SummerMain.jpeg";
+import AutumnMain from "../assets/images/Autumn/AutumnMain.jpeg";
+import WinterMain from "../assets/images/Winter/WinterMain.jpeg";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { sakura } from "../pages/Gallery";
@@ -20,13 +20,13 @@ const GalleryCard = ({ type }: GalleryCardProps) => {
     switch (type) {
       case "spring":
         setThemeColor(
-          "linear-gradient(180deg, #F497FC 0%, rgba(243, 169, 250, 0.557292) 52.6%, rgba(217, 217, 217, 0) 100%)"
+          "linear-gradient(180deg, #F497FC 0%, rgba(243, 169, 250, 0.557292) 44.27%, rgba(217, 217, 217, 0) 100%)"
         );
         setImageLink(SpringMain);
         break;
       case "summer":
         setThemeColor(
-          "linear-gradient(180deg, #00FF19 0%, rgba(180, 255, 85, 0.557292) 44.27%, rgba(217, 217, 217, 0) 100%)"
+          "linear-gradient(180deg, #01AE13 0%, rgba(112, 160, 51, 0.557292) 44.27%, rgba(217, 217, 217, 0) 100%)"
         );
         setImageLink(SummerMain);
         break;

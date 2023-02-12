@@ -225,7 +225,6 @@ Sakura.prototype.start = function () {
   const animId = this.el.dataset.sakuraAnimId;
   if (!animId) {
     this.el.setAttribute("data-sakura-anim-id", window.requestAnimationFrame(this.createPetal));
-  } else {
   }
 };
 

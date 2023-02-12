@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import "../assets/sakura/sakura.css";
-import Sakura from "../assets/sakura/sakura";
-import SpringMain from "../assets/images/SpringMain.jpeg";
 import FeedLayout from "../layout/FeedLayout";
 import styled from "@emotion/styled";
 import { sakura } from "./Gallery";
+import ImageCard from "../components/ImageCard";
+import { springData } from "../Storage/SeasonData";
 
 const Spring = () => {
   useEffect(() => {
@@ -14,16 +14,24 @@ const Spring = () => {
       gradientColorEnd: "rgba(255, 197, 208, 0.9)", // Gradient color end (rgba).
       gradientColorDegree: 120, // Gradient degree angle.
     };
+    sakura.start();
   }, []);
   return (
     <FeedLayout>
-      <MainContainer>
-        <Wrapper>
-          <ImageContainer>
-            <img src={SpringMain} />
-          </ImageContainer>
-        </Wrapper>
-      </MainContainer>
+      <div className={"carousel w-full"}>
+        {springData.map((element) => {
+          return (
+            <ImageCard
+              title={element.title}
+              imgUrl={element.imgUrl}
+              date={element.date}
+              photoOwner={element.photoOwner}
+              comment={element.comment}
+              season={"spring"}
+            />
+          );
+        })}
+      </div>
     </FeedLayout>
   );
 };
