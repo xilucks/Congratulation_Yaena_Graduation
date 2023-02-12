@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import FeedLayout from "../layout/FeedLayout";
 import styled from "@emotion/styled";
 import { sakura } from "./Gallery";
@@ -6,6 +6,7 @@ import { winterData } from "../Storage/SeasonData";
 import ImageCard from "../components/ImageCard";
 
 const Winter = () => {
+  const scrollRef = useRef<any>([]);
   useEffect(() => {
     sakura.settings.colors[0] = {
       // You can add multiple colors (chosen randomly) by adding elements to the array.
@@ -19,15 +20,18 @@ const Winter = () => {
     <div className={"h-full w-full bg-[#030179]"}>
       <FeedLayout>
         <div className={"carousel w-full"}>
-          {winterData.map((element) => {
+          {winterData.map((element, index) => {
             return (
               <ImageCard
+                key={element.title}
                 title={element.title}
+                index={index}
                 imgUrl={element.imgUrl}
                 date={element.date}
                 photoOwner={element.photoOwner}
                 comment={element.comment}
                 season={"winter"}
+                scrollRef={scrollRef}
               />
             );
           })}

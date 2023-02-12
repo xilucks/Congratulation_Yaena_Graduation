@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import "../assets/sakura/sakura.css";
 import FeedLayout from "../layout/FeedLayout";
 import styled from "@emotion/styled";
@@ -7,6 +7,7 @@ import ImageCard from "../components/ImageCard";
 import { springData } from "../Storage/SeasonData";
 
 const Spring = () => {
+  const scrollRef = useRef<any>([]);
   useEffect(() => {
     sakura.settings.colors[0] = {
       // You can add multiple colors (chosen randomly) by adding elements to the array.
@@ -19,15 +20,18 @@ const Spring = () => {
   return (
     <FeedLayout>
       <div className={"carousel w-full"}>
-        {springData.map((element) => {
+        {springData.map((element, index) => {
           return (
             <ImageCard
+              key={element.title}
               title={element.title}
+              index={index}
               imgUrl={element.imgUrl}
               date={element.date}
               photoOwner={element.photoOwner}
               comment={element.comment}
               season={"spring"}
+              scrollRef={scrollRef}
             />
           );
         })}

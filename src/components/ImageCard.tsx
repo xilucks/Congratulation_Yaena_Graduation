@@ -1,8 +1,22 @@
 import styled from "@emotion/styled";
 import { SeasonDataType } from "../types/imageCardType";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
-const ImageCard = ({ title, imgUrl, date, photoOwner, comment, season }: SeasonDataType) => {
+interface ImageCardProps extends SeasonDataType {
+  index: number;
+  scrollRef: React.MutableRefObject<any>;
+}
+
+const ImageCard = ({
+  title,
+  index,
+  imgUrl,
+  date,
+  photoOwner,
+  comment,
+  season,
+  scrollRef,
+}: ImageCardProps) => {
   const [InfoVisible, setInfoVisible] = useState<boolean>(false);
 
   const handlePhotoClick = () => {
@@ -10,10 +24,13 @@ const ImageCard = ({ title, imgUrl, date, photoOwner, comment, season }: SeasonD
   };
 
   return (
-    <MainContainer className={"carousel-item"}>
+    <MainContainer
+      className={"carousel-item"}
+      ref={(element) => (scrollRef.current[index] = element)}
+    >
       <Wrapper>
         <ImageContainer onClick={handlePhotoClick}>
-          <img src={imgUrl} />
+          <img src={imgUrl} alt={"이미지"} />
           {InfoVisible && (
             <PhotoInformation season={season} key={title}>
               <div className={"date"}>{date}</div>
@@ -21,6 +38,26 @@ const ImageCard = ({ title, imgUrl, date, photoOwner, comment, season }: SeasonD
               <div className={"from"}>from {photoOwner}</div>
             </PhotoInformation>
           )}
+          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <a
+              className="btn-circle btn"
+              onClick={(event) => {
+                event.stopPropagation();
+                scrollRef.current[index - 1].scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              ❮
+            </a>
+            <a
+              className="btn-circle btn"
+              onClick={(event) => {
+                event.stopPropagation();
+                scrollRef.current[index + 1].scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              ❯
+            </a>
+          </div>
         </ImageContainer>
       </Wrapper>
     </MainContainer>
@@ -55,9 +92,20 @@ const ImageContainer = styled.div`
     height: 100%;
     object-fit: cover;
   }
+
+  a {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+
+    :hover {
+      background: rgba(255, 255, 255, 0.7);
+      border: none;
+      color: rgba(255, 255, 255, 1);
+    }
+  }
 `;
 
-const PhotoInformation = styled.div<{ season: string }>`
+const PhotoInformation = styled.div<{ season: string | undefined }>`
   position: absolute;
   top: 0;
   width: 100%;

@@ -6,5 +6,5 @@ export interface SeasonDataType {
 
   comment: string;
 
-  season?: "spring" | "summer" | "autumn" | "winter";
+  season: "spring" | "summer" | "autumn" | "winter";
 }

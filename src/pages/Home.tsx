@@ -1,7 +1,9 @@
 import MainImage from "../assets/images/hero_image.png";
 import WhiteArrowDown from "../assets/icon/WhiteArrowDown.svg";
+import NaviMainImg from "../assets/images/NaviMainImg.png";
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
+import Gallery from "./Gallery";
 
 const Home = () => {
   return (
@@ -26,22 +28,30 @@ const Home = () => {
         <Selector className={"carousel-item h-full"}>
           <ContentArea>
             <div>
-              <div>
+              <div className={"date"}>
                 <span>2023.02.16</span>
               </div>
-              <div>
-                <span>이예나의 졸업을 축하합니다.</span>
+              <div className={"comment"}>
+                <div className={"w-full text-8xl"}>축</div>
+                <span className={"w-full"}>이예나 졸업</span>
               </div>
+            </div>
+            <div className={"w-full"}>
+              <img src={NaviMainImg} alt={"메인 이미지"} />
             </div>
             <div>
               <div>
                 <Link to={"/gallery"}>
-                  <button type="button">갤러리 이건 버튼임</button>
+                  <GalleryButton type="button" className={"btn"}>
+                    갤러리 바로가기
+                  </GalleryButton>
                 </Link>
               </div>
               <div>
                 <Link to={"/end"}>
-                  <button type="button">축하사 이건 버튼임</button>
+                  <GalleryButton type="button" className={"btn"}>
+                    축하사 바로가기
+                  </GalleryButton>
                 </Link>
               </div>
             </div>
@@ -59,6 +69,10 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
   background: linear-gradient(180deg, rgba(255, 153, 0, 1) 10%, rgba(255, 22, 232, 0.3) 90%);
+
+  color: #ffffff;
+
+  font-family: "Gaegu", sans-serif;
 `;
 
 const Selector = styled.div``;
@@ -138,7 +152,40 @@ const ContentArea = styled.div`
   width: 100%;
   height: 100%;
 
+  padding: 10vh 0;
+
   background-color: #fed1a7;
+
+  text-align: center;
+
+  .date {
+    font-size: 48px;
+    margin-bottom: 50px;
+  }
+
+  .comment {
+    font-size: 63px;
+    line-height: 80px;
+  }
+
+  img {
+    width: 39vw;
+    height: 40vh;
+    max-width: 250px;
+    max-height: 900px;
+
+    margin: 20px auto 5vh auto;
+  }
 `;
 
-const GalleryButton = styled.button``;
+const GalleryButton = styled.button`
+  font-size: 36px;
+  margin-bottom: 10px;
+
+  color: white;
+
+  :hover {
+    background: rgba(240, 185, 42, 0.557292) 44.27%;
+    border: none;
+  }
+`;

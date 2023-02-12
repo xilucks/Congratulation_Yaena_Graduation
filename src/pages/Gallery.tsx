@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import "../assets/sakura/sakura.css";
 import Sakura from "../assets/sakura/sakura";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 
 export const sakura = new Sakura("body");
