@@ -7,10 +7,21 @@ import Summer from "./pages/Summer";
 import Autumn from "./pages/Autumn";
 import Winter from "./pages/Winter";
 import Ending from "./pages/Ending";
-import { firestore } from "../firebase-config.js";
+import { collection, getDocs } from "firebase/firestore";
+import { useEffect } from "react";
+import { db } from "../firebase-config.js";
 
 function App() {
-  console.log(firestore);
+  const usersCollectionRef = collection(db, "comments");
+
+  useEffect(() => {
+    const getUser = async () => {
+      // getDocs로 컬렉션안에 데이터 가져오기
+      const data = await getDocs(usersCollectionRef);
+      console.log(data);
+    };
+    getUser();
+  }, []);
   return (
     <Routes>
       <Route element={<DefaultLayout />}>
