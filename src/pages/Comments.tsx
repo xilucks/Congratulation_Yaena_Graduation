@@ -3,12 +3,19 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase-config.js";
 import styled from "@emotion/styled";
 import Header from "../components/Header";
+import SpringBackground from "../assets/images/Spring/SpringBackground.jpeg";
 
 const Comments = () => {
   const [comments, setComments] = useState<any[]>([]);
   const commentsCollectionRef = collection(db, "comments");
 
-  const bgColors = ["#FF9900", "#01AE13", "#F89502", "#030179", "#F497FC", "#00A9B4"];
+  const bgColors = [
+    "rgba(243, 169, 250, 0.557292)",
+    "rgba(112, 160, 51, 0.557292)",
+    "rgba(240, 185, 42, 0.557292)",
+    "rgba(90, 64, 245, 0.557292)",
+    "rgba(0, 174, 213, 0.557292)",
+  ];
   const messageType = ["start", "end"];
 
   useEffect(() => {
@@ -48,18 +55,42 @@ export default Comments;
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
+  text-align: center;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(${SpringBackground});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+`;
+
+const BackgroundContainer = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  max-width: 800px;
 `;
 
 const CommentArea = styled.div`
-  width: 80%;
+  width: 55%;
+  min-width: 400px;
   margin: 80px auto 0 auto;
 `;
 
 const CommentContainer = styled.div`
   margin-bottom: 25px;
+  font-weight: bold;
+  text-align: left;
+  
+  padding-right: 10px;
 `;
 
-const CommentOwner = styled.div``;
+const CommentOwner = styled.div`
+  color: #ffffff;
+  font-size: 14px;
+  padding: 0 10px;
+`;
 
 const CommentContent = styled.div<{ background: string }>`
   background: ${(props) => props.background};
