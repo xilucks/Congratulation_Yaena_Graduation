@@ -8,6 +8,7 @@ import Autumn from "./pages/Autumn";
 import Winter from "./pages/Winter";
 import Ending from "./pages/Ending";
 import Comments from "./pages/Comments";
+import WriteComment from "./pages/WriteComment";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/gallery/autumn" element={<Autumn />} />
         <Route path="/gallery/winter" element={<Winter />} />
         <Route path="/comment" element={<Comments />} />
+        <Route path="/comment/new" element={<WriteComment />} />
         <Route path="/end" element={<Ending />} />
       </Route>
     </Routes>

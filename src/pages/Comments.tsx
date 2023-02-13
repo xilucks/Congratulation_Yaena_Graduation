@@ -4,10 +4,13 @@ import { db } from "../../firebase-config.js";
 import styled from "@emotion/styled";
 import Header from "../components/Header";
 import SpringBackground from "../assets/images/Spring/SpringBackground.jpeg";
+import { useNavigate } from "react-router-dom";
 
 const Comments = () => {
   const [comments, setComments] = useState<any[]>([]);
   const commentsCollectionRef = collection(db, "comments");
+
+  const navigate = useNavigate();
 
   const bgColors = [
     "rgba(243, 169, 250, 0.557292)",
@@ -45,7 +48,14 @@ const Comments = () => {
             </CommentContainer>
           );
         })}
-        <WriteCommentButton className={"btn"}>축하글 작성 바로가기</WriteCommentButton>
+        <WriteCommentButton
+          className={"btn"}
+          onClick={() => {
+            navigate("new");
+          }}
+        >
+          축하글 작성 바로가기
+        </WriteCommentButton>
       </CommentArea>
     </Wrapper>
   );
@@ -54,7 +64,7 @@ const Comments = () => {
 export default Comments;
 
 const Wrapper = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 100%;
   text-align: center;
 
@@ -86,6 +96,12 @@ const CommentArea = styled.div`
   margin: 80px auto 0 auto;
   
   overflow: scroll;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  ::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
 `;
 
 const CommentContainer = styled.div`
