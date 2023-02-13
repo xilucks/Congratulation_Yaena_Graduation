@@ -48,7 +48,7 @@ const Home = () => {
                 </Link>
               </div>
               <div>
-                <Link to={"/end"}>
+                <Link to={"/comment"}>
                   <GalleryButton type="button" className={"btn"}>
                     축하사 바로가기
                   </GalleryButton>

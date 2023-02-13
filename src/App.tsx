@@ -7,21 +7,9 @@ import Summer from "./pages/Summer";
 import Autumn from "./pages/Autumn";
 import Winter from "./pages/Winter";
 import Ending from "./pages/Ending";
-import { collection, getDocs } from "firebase/firestore";
-import { useEffect } from "react";
-import { db } from "../firebase-config.js";
+import Comments from "./pages/Comments";
 
 function App() {
-  const usersCollectionRef = collection(db, "comments");
-
-  useEffect(() => {
-    const getUser = async () => {
-      // getDocs로 컬렉션안에 데이터 가져오기
-      const data = await getDocs(usersCollectionRef);
-      console.log(data);
-    };
-    getUser();
-  }, []);
   return (
     <Routes>
       <Route element={<DefaultLayout />}>
@@ -31,7 +19,8 @@ function App() {
         <Route path="/gallery/summer" element={<Summer />} />
         <Route path="/gallery/autumn" element={<Autumn />} />
         <Route path="/gallery/winter" element={<Winter />} />
-        <Route path={"/end"} element={<Ending />} />
+        <Route path="/comment" element={<Comments />} />
+        <Route path="/end" element={<Ending />} />
       </Route>
     </Routes>
   );
