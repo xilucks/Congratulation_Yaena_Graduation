@@ -40,11 +40,12 @@ const Comments = () => {
                 background={bgColors[Math.floor(Math.random() * (bgColors.length - 1))]}
                 className={"chat-bubble"}
               >
-                {element.comment}
+                <span className={"block"}>{element.comment}</span>
               </CommentContent>
             </CommentContainer>
           );
         })}
+        <WriteCommentButton className={"btn"}>축하글 작성 바로가기</WriteCommentButton>
       </CommentArea>
     </Wrapper>
   );
@@ -64,25 +65,34 @@ const Wrapper = styled.div`
   background-position: center;
 `;
 
-const BackgroundContainer = styled.div`
+const WriteCommentButton = styled.button`
   position: absolute;
-  width: 100%;
-  height: 100%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+  width: 50%;
+  color: white;
 
-  max-width: 800px;
+  :hover {
+    background: rgba(243, 169, 250, 0.557292);
+    border: none;
+  }
 `;
-
 const CommentArea = styled.div`
   width: 55%;
+  height: 70%;
   min-width: 400px;
   margin: 80px auto 0 auto;
+  
+  overflow: scroll;
 `;
 
 const CommentContainer = styled.div`
   margin-bottom: 25px;
   font-weight: bold;
   text-align: left;
-  
+
   padding-right: 10px;
 `;
 
