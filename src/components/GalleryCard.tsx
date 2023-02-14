@@ -5,7 +5,6 @@ import AutumnMain from "../assets/images/Autumn/AutumnMain.jpeg";
 import WinterMain from "../assets/images/Winter/WinterMain.jpeg";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { sakura } from "../pages/Gallery";
 
 interface GalleryCardProps {
   type: "spring" | "summer" | "autumn" | "winter";

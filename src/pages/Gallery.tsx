@@ -1,6 +1,7 @@
 import GalleryCard from "../components/GalleryCard";
 import styled from "@emotion/styled";
 import "../assets/sakura/sakura.css";
+// @ts-ignore
 import Sakura from "../assets/sakura/sakura";
 import { useEffect } from "react";
 import Header from "../components/Header";

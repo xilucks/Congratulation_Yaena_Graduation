@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
+// @ts-ignore
 import { db } from "../../firebase-config.js";
 import styled from "@emotion/styled";
 import Header from "../components/Header";
@@ -23,7 +24,7 @@ const Comments = () => {
 
   useEffect(() => {
     const getComments = async () => {
-      const data = await getDocs(commentsCollectionRef);
+      const data = await getDocs(query(commentsCollectionRef, orderBy("time_stamp", "asc")));
       setComments(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getComments();
@@ -91,7 +92,7 @@ const WriteCommentButton = styled.button`
 `;
 const CommentArea = styled.div`
   width: 55%;
-  height: 70%;
+  height: 70vh;
   min-width: 400px;
   margin: 80px auto 0 auto;
   
@@ -121,4 +122,5 @@ const CommentOwner = styled.div`
 const CommentContent = styled.div<{ background: string }>`
   background: ${(props) => props.background};
   color: white;
+  white-space: pre-line;
 `;

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { SeasonDataType } from "../types/imageCardType";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 interface ImageCardProps extends SeasonDataType {
   index: number;
@@ -117,6 +117,7 @@ const PhotoInformation = styled.div<{ season: string | undefined }>`
   padding: 30px;
 
   font-family: "Gaegu", sans-serif;
+  white-space: pre-line;
 
   .date {
     padding-top: 5%;
