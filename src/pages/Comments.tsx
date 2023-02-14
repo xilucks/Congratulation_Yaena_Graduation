@@ -78,7 +78,7 @@ const WriteCommentButton = styled.button`
   margin: 0 auto;
   left: 0;
   right: 0;
-  bottom: 10%;
+  bottom: 15%;
   width: 50vh;
   color: white;
   :hover {
@@ -88,7 +88,7 @@ const WriteCommentButton = styled.button`
 `;
 const CommentArea = styled.div`
   width: 50vh;
-  height: 70vh;
+  height: 65vh;
   min-width: 400px;
   margin: 80px auto 0 auto;
 
@@ -97,6 +97,7 @@ const CommentArea = styled.div`
   scrollbar-width: none; /* Firefox */
   ::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
+  }
 `;
 
 const CommentContainer = styled.div`

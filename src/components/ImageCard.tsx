@@ -136,6 +136,13 @@ const PhotoInformation = styled.div<{ season: string | undefined }>`
     font-size: 24px;
     width: 100%;
     margin-bottom: 10%;
+
+    overflow: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    ::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera*/
+    }
   }
 
   .from {
