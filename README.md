@@ -1,6 +1,7 @@
 # 예나야 졸업 축하한돠아!
 ![image](https://user-images.githubusercontent.com/78866590/218278264-efcddacb-4157-42db-8a7b-e2152b0b7188.png)
 </br>
+(대충 축하한다는 내용)
 
 ## 주소
 [바로가기](https://congratulationyaena.web.app/)
@@ -20,7 +21,6 @@
 * 재미난 인터렉션을 넣는다.
 * 친구들이 축하 코멘트를 달 수 있고 확인할 수 있다.
 
-</br>
 
 ## 기술스택
 <div>
