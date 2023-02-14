@@ -30,7 +30,7 @@ const ImageCard = ({
     >
       <Wrapper>
         <ImageContainer onClick={handlePhotoClick}>
-          <img src={imgUrl} alt={"이미지"} loading={"lazy"}/>
+          <img src={imgUrl} alt={"이미지"} loading={"lazy"} />
           {InfoVisible && (
             <PhotoInformation season={season} key={title}>
               <div className={"date"}>{date}</div>
@@ -43,7 +43,9 @@ const ImageCard = ({
               className="btn-circle btn"
               onClick={(event) => {
                 event.stopPropagation();
-                scrollRef.current[index - 1].scrollIntoView({ behavior: "smooth" });
+                scrollRef.current[
+                  index - 1 < 0 ? scrollRef.current.length - 1 : index - 1
+                ].scrollIntoView({ behavior: "smooth" });
               }}
             >
               ❮
@@ -52,7 +54,9 @@ const ImageCard = ({
               className="btn-circle btn"
               onClick={(event) => {
                 event.stopPropagation();
-                scrollRef.current[index + 1].scrollIntoView({ behavior: "smooth" });
+                scrollRef.current[
+                  index + 1 > scrollRef.current.length - 1 ? 0 : index + 1
+                ].scrollIntoView({ behavior: "smooth" });
               }}
             >
               ❯

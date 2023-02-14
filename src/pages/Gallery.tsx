@@ -16,7 +16,11 @@ const Gallery = () => {
     <>
       <Header />
       <Wrapper>
-        <TittleDiv>Gallery</TittleDiv>
+        <TitleDiv>
+          <Title>Gallery</Title>
+          <Script className={"text-xl"}>카드를 클릭해서 사진을 확인해보세요</Script>
+        </TitleDiv>
+
         <CardContainer className={"carousel-center carousel space-x-4 bg-neutral"}>
           <GalleryCard type={"spring"} />
           <GalleryCard type={"summer"} />
@@ -40,7 +44,7 @@ const Wrapper = styled.div`
   padding-top: 15vh;
 `;
 
-const TittleDiv = styled.div`
+const TitleDiv = styled.div`
   text-align: center;
   font-family: "Kalam", cursive;
 
@@ -49,12 +53,24 @@ const TittleDiv = styled.div`
   align-content: center;
 `;
 
+const Title = styled.div`
+  width: 100%;
+  line-height: 90px;
+`;
+
+const Script = styled.div`
+  display: inline-block;
+
+  font-size: 16px;
+  color: #c0c0c0;
+`;
+
 const CardContainer = styled.div`
   display: flex;
   width: 100%;
   max-width: 2500px;
   gap: 30px;
 
-  padding: 5vh 40px;
+  padding: 0 40px;
   margin-top: 10vh;
 `;
