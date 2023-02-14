@@ -37,7 +37,7 @@ const Comments = () => {
           return (
             <CommentContainer
               key={element.id}
-              className={`chat chat-${messageType[Math.floor(Math.random() * 2)]}`}
+              className={`chat chat-start`}
             >
               <CommentOwner className={"chat-header"}>{element.name}</CommentOwner>
               <CommentContent
@@ -67,6 +67,7 @@ export default Comments;
 const Wrapper = styled.div`
   width: 100vw;
   height: 100%;
+  min-height: 667px;
   text-align: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url(${SpringBackground});
