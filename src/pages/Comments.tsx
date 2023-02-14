@@ -68,7 +68,6 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 100%;
   text-align: center;
-
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url(${SpringBackground});
   background-size: contain;
@@ -82,25 +81,22 @@ const WriteCommentButton = styled.button`
   left: 0;
   right: 0;
   bottom: 10%;
-  width: 50%;
+  width: 50vh;
   color: white;
-
   :hover {
     background: rgba(243, 169, 250, 0.557292);
     border: none;
   }
 `;
 const CommentArea = styled.div`
-  width: 55%;
+  width: 50vh;
   height: 70vh;
   min-width: 400px;
   margin: 80px auto 0 auto;
-  
-  overflow: scroll;
 
+  overflow: scroll;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-
   ::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
 `;
@@ -109,8 +105,7 @@ const CommentContainer = styled.div`
   margin-bottom: 25px;
   font-weight: bold;
   text-align: left;
-
-  padding-right: 10px;
+  padding-right: 20px;
 `;
 
 const CommentOwner = styled.div`
