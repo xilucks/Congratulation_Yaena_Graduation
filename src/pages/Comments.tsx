@@ -4,7 +4,7 @@ import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import { db } from "../../firebase-config.js";
 import styled from "@emotion/styled";
 import Header from "../components/Header";
-import SpringBackground from "../assets/images/Spring/SpringBackground.jpeg";
+import SpringBackground from "../../public/images/Spring/SpringBackground.jpeg";
 import { useNavigate } from "react-router-dom";
 
 const Comments = () => {
@@ -35,10 +35,7 @@ const Comments = () => {
       <CommentArea>
         {comments.map((element) => {
           return (
-            <CommentContainer
-              key={element.id}
-              className={`chat chat-start`}
-            >
+            <CommentContainer key={element.id} className={`chat chat-start`}>
               <CommentOwner className={"chat-header"}>{element.name}</CommentOwner>
               <CommentContent
                 background={bgColors[Math.floor(Math.random() * (bgColors.length - 1))]}

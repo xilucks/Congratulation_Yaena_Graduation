@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import "../assets/sakura/sakura.css";
 import FeedLayout from "../layout/FeedLayout";
-import styled from "@emotion/styled";
 import { sakura } from "./Gallery";
 import ImageCard from "../components/ImageCard";
 import { springData } from "../Storage/SeasonData";

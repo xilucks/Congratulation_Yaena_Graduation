@@ -15,11 +15,11 @@ const Home = () => {
             <div>graduation</div>
           </TextArea>
           <ScrollArea>
-            <img src={MainImage} alt={"메인 이미지"} />
+            <img src={MainImage} alt={"메인 이미지"} loading={"lazy"} />
             <div>
               <span>
                 <label>Scroll</label>
-                <img src={WhiteArrowDown} alt={"스크롤 안내 아이콘"} loading={"lazy"}/>
+                <img src={WhiteArrowDown} alt={"스크롤 안내 아이콘"} loading={"lazy"} />
               </span>
             </div>
           </ScrollArea>
@@ -40,7 +40,7 @@ const Home = () => {
               </div>
             </div>
             <div className={"w-full"}>
-              <img src={NaviMainImg} alt={"메인 이미지"} loading={"lazy"}/>
+              <img src={NaviMainImg} alt={"메인 이미지"} loading={"lazy"} />
             </div>
             <div>
               <div>
