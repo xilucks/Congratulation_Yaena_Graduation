@@ -3,7 +3,7 @@
 </br>
 
 ## 주소
-
+[바로가기](https://congratulationyaena.web.app/)
 
 ## 개요
 그냥 해보고 싶었음
@@ -13,7 +13,7 @@
 다양한 애니메이션과 인터렉션으로 간단한 페이지지만 보는 재미와 추억을 함께 주는 사진 저장소
 
 ## 프로젝트 기간
-2023.02.11 - 2023.02.13
+2023.02.11 - 2023.02.14
 
 ## 기능
 * 사진을 보여준다.
@@ -25,17 +25,17 @@
 ## 기술스택
 <div>
     <div>
-        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/>
-        <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"/> 
+        <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white"/> 
+        <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white"/> 
     </div>
     <div>
-        <img src="https://img.shields.io/badge/TailWindCSS-06B6D4?style=flat-square&logo=TailWindCSS&logoColor=white"/>
-        <img src="https://img.shields.io/badge/DaisyUI-5A0EF8?style=flat-square&logo=DaisyUI&logoColor=white"/>
-        <img src="https://img.shields.io/badge/styledComponents-DB7093?style=flat-square&logo=styledComponents&logoColor=white"/>
+        <img src="https://img.shields.io/badge/TailWindCSS-06B6D4?style=for-the-badge&logo=TailWindCSS&logoColor=white"/>
+        <img src="https://img.shields.io/badge/DaisyUI-5A0EF8?style=for-the-badge&logo=DaisyUI&logoColor=white"/>
+        <img src="https://img.shields.io/badge/styledComponents-DB7093?style=for-the-badge&logo=styledComponents&logoColor=white"/>
     </div>
     <div>
-        <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=Firebase&logoColor=white"/>
-        <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=Figma&logoColor=white"/>
+        <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=Firebase&logoColor=white"/>
+        <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=white"/>
     </div>
 </div>
 
