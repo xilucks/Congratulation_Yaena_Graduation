@@ -156,8 +156,6 @@ const ContentArea = styled.div`
   width: 100%;
   height: 100%;
 
-  padding: 5vh 0;
-
   background-color: #fed1a7;
 
   text-align: center;
