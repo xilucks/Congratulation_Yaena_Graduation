@@ -17,7 +17,7 @@ const Gallery = () => {
       <Header />
       <Wrapper>
         <TittleDiv>Gallery</TittleDiv>
-        <CardContainer className={"carousel-center carousel space-x-4 bg-neutral p-4"}>
+        <CardContainer className={"carousel-center carousel space-x-4 bg-neutral"}>
           <GalleryCard type={"spring"} />
           <GalleryCard type={"summer"} />
           <GalleryCard type={"autumn"} />
@@ -36,7 +36,8 @@ const Wrapper = styled.div`
   height: 100vh;
   margin-left: auto;
   margin-right: auto;
-  padding: 150px 0 25vh 0;
+
+  padding-top: 15vh;
 `;
 
 const TittleDiv = styled.div`
@@ -53,8 +54,7 @@ const CardContainer = styled.div`
   width: 100%;
   max-width: 2500px;
   gap: 30px;
-  height: 100%;
-  align-items: end;
 
-  padding: 20px 40px;
+  padding: 5vh 40px;
+  margin-top: 10vh;
 `;

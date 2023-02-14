@@ -27,13 +27,17 @@ const Home = () => {
         </Selector>
         <Selector className={"carousel-item h-full"}>
           <ContentArea>
-            <div>
+            <div className={"commentContainer"}>
               <div className={"date"}>
                 <span>2023.02.16</span>
               </div>
               <div className={"comment"}>
-                <div className={"w-full text-8xl"}>축</div>
-                <span className={"w-full"}>이예나 졸업</span>
+                <div className={"w-full"}>
+                  <span>축</span>
+                </div>
+                <div>
+                  <span className={"w-full"}>이예나 졸업</span>
+                </div>
               </div>
             </div>
             <div className={"w-full"}>
@@ -152,20 +156,24 @@ const ContentArea = styled.div`
   width: 100%;
   height: 100%;
 
-  padding: 10vh 0;
+  padding: 5vh 0;
 
   background-color: #fed1a7;
 
   text-align: center;
 
   .date {
-    font-size: 48px;
-    margin-bottom: 50px;
+    font-size: 5vh;
+    line-height: 7vh;
   }
 
   .comment {
-    font-size: 63px;
-    line-height: 80px;
+    font-size: 8vh;
+    line-height: 9vh;
+  }
+
+  .commentContainer {
+    height: 30%;
   }
 
   img {
