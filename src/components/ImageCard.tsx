@@ -30,7 +30,7 @@ const ImageCard = ({
     >
       <Wrapper>
         <ImageContainer onClick={handlePhotoClick}>
-          <img src={imgUrl} alt={"이미지"} />
+          <img src={imgUrl} alt={"이미지"} loading={"lazy"}/>
           {InfoVisible && (
             <PhotoInformation season={season} key={title}>
               <div className={"date"}>{date}</div>

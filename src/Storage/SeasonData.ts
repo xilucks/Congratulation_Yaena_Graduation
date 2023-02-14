@@ -1,4 +1,6 @@
 import { SeasonDataType } from "../types/imageCardType";
+import spring1 from "../assets/images/Spring/SpringMain.jpeg";
+import spring2 from "../../public/images/Spring/190401.jpeg";
 
 const defaultPath = "../src/assets/images";
 export const springData: SeasonDataType[] = [
@@ -11,7 +13,7 @@ export const springData: SeasonDataType[] = [
   },
   {
     title: "spring2",
-    imgUrl: `${defaultPath}/Spring/190401.jpeg`,
+    imgUrl: spring2,
     date: "19.04.01",
     photoOwner: "시운",
     comment: "뭔 사진인지 모르는데 내가 찍어줬음.. \n 너도 젊었구나...",

@@ -1,9 +1,8 @@
-import MainImage from "../assets/images/hero_image.png";
+import MainImage from "../../public/images/hero_image.png";
 import WhiteArrowDown from "../assets/icon/WhiteArrowDown.svg";
-import NaviMainImg from "../assets/images/NaviMainImg.png";
+import NaviMainImg from "../../public/images/NaviMainImg.png";
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
-import Gallery from "./Gallery";
 
 const Home = () => {
   return (

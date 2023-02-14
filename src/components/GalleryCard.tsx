@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
-import SpringMain from "../assets/images/Spring/SpringMain.jpeg";
-import SummerMain from "../assets/images/Summer/SummerMain.jpeg";
-import AutumnMain from "../assets/images/Autumn/AutumnMain.jpeg";
-import WinterMain from "../assets/images/Winter/WinterMain.jpeg";
+import SpringMain from "../../public/images/Spring/SpringMain.jpeg";
+import SummerMain from "../../public/images/Summer/SummerMain.jpeg";
+import AutumnMain from "../../public/images/Autumn/AutumnMain.jpeg";
+import WinterMain from "../../public/images/Winter/WinterMain.jpeg";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -47,7 +47,7 @@ const GalleryCard = ({ type }: GalleryCardProps) => {
     <Wrapper className="carousel-item">
       <CardContainer>
         <CardFront>
-          <MainImage src={imageLink} alt={"메인 이미지"} />
+          <MainImage src={imageLink} alt={"메인 이미지"} loading={"lazy"} />
         </CardFront>
         <CardBack
           background={themeColor}
