@@ -98,7 +98,7 @@ const ScrollArea = styled.div`
   width: 100%;
   position: absolute;
   bottom: 0;
-  padding-bottom: 10vh;
+  padding-bottom: 20vh;
 
   img {
     margin-left: auto;
@@ -118,7 +118,7 @@ const ScrollArea = styled.div`
 
   span {
     position: absolute;
-    bottom: 50%;
+    bottom: 120%;
     left: 49%;
     color: white;
     margin-left: -12px;

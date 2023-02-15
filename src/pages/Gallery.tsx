@@ -41,7 +41,7 @@ const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-  padding-top: 15vh;
+  padding-top: 10vh;
 `;
 
 const TitleDiv = styled.div`
@@ -55,7 +55,7 @@ const TitleDiv = styled.div`
 
 const Title = styled.div`
   width: 100%;
-  line-height: 90px;
+  line-height: 80px;
 `;
 
 const Script = styled.div`

@@ -52,9 +52,9 @@ export const summerData: SeasonDataType[] = [
   {
     title: "summer3",
     imgUrl: `/images/Summer/SummerTogather.jpeg`,
-    date: "2x.xx.xx",
+    date: "21.08.28",
     photoOwner: "민희",
-    comment: "with 지희, 민희",
+    comment: "우리 예나 덕분에 평균키 160대 신난다~",
   },
   {
     title: "summer4",
@@ -125,5 +125,19 @@ export const winterData: SeasonDataType[] = [
     date: "20.01.12",
     photoOwner: "상호",
     comment: "방탈출하고 밤새 보드게임해도 안 피곤했던 날.",
+  },
+  {
+    title: "winter3",
+    imgUrl: `/images/Winter/181214.jpeg`,
+    date: "18.12.14",
+    photoOwner: "시운",
+    comment: "이때 밤샜나..? 늦게 갔나 기억도 잘 안나는데 하여튼 재밌었음",
+  },
+  {
+    title: "winter4",
+    imgUrl: `/images/Winter/190114.jpeg`,
+    date: "19.01.14",
+    photoOwner: "시운",
+    comment: "스키장 진짜 재밌긴 했어... " + "\n다음에 다시 가자고 하지 않았었나..?",
   },
 ];
