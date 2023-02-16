@@ -113,6 +113,13 @@ export const autumnData: SeasonDataType[] = [
 
 export const winterData: SeasonDataType[] = [
   {
+    title: "winter",
+    imgUrl: `/images/Winter/230216.jpeg`,
+    date: "23.02.16",
+    photoOwner: "시운",
+    comment: "이예나의 졸업을 축하합니다.",
+  },
+  {
     title: "winter1",
     imgUrl: `/images/Winter/WinterMain.jpeg`,
     date: "20.10.26",
